@@ -96,7 +96,7 @@ sub attach {
     }
     $tmpl =~ s/%ATTACHTABLE%/$atext/g;
     $tmpl =~ s/%FILEUSER%/$fileWikiUser/g;
-    $args->{filename} = Foswiki::entityEncode( $args->{name} );
+    $args->{name} = Foswiki::entityEncode( $args->{name} );
     $tmpl =~ s/%FILENAME%/$args->{name}/g;
     $tmpl = $topicObject->expandMacros($tmpl);
     $tmpl = $topicObject->renderTML($tmpl);
